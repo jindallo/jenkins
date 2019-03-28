@@ -1,7 +1,10 @@
+#!groovy
+
 node('master') {
 
     stage('Build') {
         echo 'Hello World 1'
+        sh 'ls'
     }
     
     stage('Test') {
