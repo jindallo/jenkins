@@ -4,7 +4,8 @@ node('master') {
 
     stage('Build') {
         echo 'Hello World 1'
-        sh 'ls'
+        sh 'echo $Target_Node'
+        echo 'echo $Target_Node'
     }
     
     stage('Test') {
