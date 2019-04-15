@@ -1,11 +1,14 @@
 #!groovy
 
+def Target = "${params.TargetNode}"
+def WORKSPACE = "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov"
+
 node('master') {
 
     stage('Build') {
         echo 'Hello World 1'
-        sh 'echo $params.TargetNode'
-        echo 'echo $params.TargetNode'
+        sh 'cd $WORKSPACE'
+        sh 'pwd'
     }
     
     stage('Test') {
