@@ -21,8 +21,17 @@ pipeline {
                 sh """
            	        date
                     pwd
+		            echo "pkill canplayer -f" > ~/pkcan.sh
+                    echo "pkill cangen -f" >> ~/pkcan.sh
+                    echo "return 0" >> ~/pkcan.sh
+                    chmod 777 ~/pkcan.sh
+                    ~/pkcan.sh
+                    rm -rf venv
+                    virtualenv venv -p python3.6
+                    . venv/bin/activate
+                    ./validation/init.sh
                     cd validation/tests/uds/
-                    test_uds_did_f101.sh
+                    ./test_uds_did_f101.sh
                 """
             }
         }
