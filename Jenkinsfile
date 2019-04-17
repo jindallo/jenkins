@@ -29,7 +29,6 @@ pipeline {
                     rm -rf venv
                     virtualenv venv -p python3.6
                     . venv/bin/activate
-                    ./validation/init.sh
                     cd validation/tests/uds/
                     ./test_uds_did_f101.sh
                 """
