@@ -26,9 +26,6 @@ pipeline {
                     echo "return 0" >> ~/pkcan.sh
                     chmod 777 ~/pkcan.sh
                     ~/pkcan.sh
-                    rm -rf venv
-                    virtualenv venv -p python3.6
-                    . venv/bin/activate
                     cd validation/tests/uds/
                     ./test_uds_f101_full_function.sh --log_dir_path "/home/jenkins/jenkins/workspace/ADAS_China/workdir/log"
                 """
