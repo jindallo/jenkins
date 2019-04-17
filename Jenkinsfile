@@ -5,7 +5,9 @@ def WORKSPACE = "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov"
 
 pipeline {
     agent {
-        customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/"
+        node {
+            customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/"
+        }
     }
 
     environment {
