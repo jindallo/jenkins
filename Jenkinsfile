@@ -30,7 +30,7 @@ pipeline {
                     virtualenv venv -p python3.6
                     . venv/bin/activate
                     cd validation/tests/uds/
-                    ./test_uds_did_f101.sh
+                    ./test_uds_f101_full_function.sh
                 """
             }
         }
