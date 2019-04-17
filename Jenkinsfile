@@ -6,6 +6,10 @@ def WORKSPACE = "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov"
 pipeline {
     agent any
 
+    environment {
+        test_dir_path = "validation/tests/boot/"
+    }
+
     stages {
         stage('Test') {
             steps {
