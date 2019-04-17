@@ -21,6 +21,8 @@ pipeline {
                 sh """
            	        date
                     pwd
+                    cd validation/tests/uds/
+                    test_uds_did_f101.sh
                 """
             }
         }
