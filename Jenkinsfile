@@ -1,11 +1,12 @@
 #!groovy
 
-def Target = "${params.TargetNode}"
+def Target_Node = "${params.TargetNode}"
 def WORKSPACE = "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov"
 
 pipeline {
     agent {
         node {
+            label "${Target_Node}"
             customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/"
         }
     }
