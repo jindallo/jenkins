@@ -6,7 +6,7 @@ def WORKSPACE = "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov"
 pipeline {
     agent {
         node {
-            label "${Target_Node}"
+            label "Test"
             customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/"
         }
     }
