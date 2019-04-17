@@ -4,7 +4,9 @@ def Target = "${params.TargetNode}"
 def WORKSPACE = "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov"
 
 pipeline {
-    agent any
+    agent {
+        customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/"
+    }
 
     environment {
         test_dir_path = "validation/tests/boot/"
