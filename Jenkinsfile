@@ -17,11 +17,26 @@ pipeline {
     }
 
     stages {
+        stage("Prepare") {
+            steps{
+                sh "/home/jenkins/replay.sh"
+                sh "sleep 10"
+            }
+        }
+
         stage('Test') {
             steps {
                 sh """
-           	        date
-                    pwd
+                    cd /home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov
+                    . venv/bin/activate
+           	        cd ${test_dir_path}
+                    rm -rf results
+                    mkdir -p results
+                    python -m pytest -vs test_uds_did_f101.py \
+                        -- junitxml=results/result.xml \
+                        -- html=results/report.html \
+                        -- log_dir_path results
+                    deactivate
                 """
             }
         }
