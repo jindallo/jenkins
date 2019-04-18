@@ -10,9 +10,6 @@ pipeline {
         }
     }
 
-    environment {
-    }
-
     stages {
         stage('Test') {
             steps {
