@@ -5,7 +5,7 @@ def Target_Node = "${params.TargetNode}"
 pipeline {
     agent {
         node {
-            label "cn-rpi-tb-03"
+            label "cn-rpi-tb-01"
             customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/test/"
         }
     }
