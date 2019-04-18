@@ -1,18 +1,16 @@
 #!groovy
 
 def Target_Node = "${params.TargetNode}"
-def WORKSPACE = "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov"
 
 pipeline {
     agent {
         node {
             label "cn-rpi-tb-03"
-            customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/"
+            customWorkspace "/home/jenkins/jenkins/workspace/ADAS_China/workdir/test/"
         }
     }
 
     environment {
-        test_dir_path = "validation/tests/boot/"
     }
 
     stages {
@@ -21,7 +19,7 @@ pipeline {
                 sh """
            	        date
                     pwd
-		            echo "pkill canplayer -f" > ~/pkcan.sh
+                    echo "pkill canplayer -f" > ~/pkcan.sh
                     echo "pkill cangen -f" >> ~/pkcan.sh
                     echo "return 0" >> ~/pkcan.sh
                     chmod 777 ~/pkcan.sh
