@@ -24,6 +24,12 @@ pipeline {
             }
         }
 
+        stage("Deploy") {
+            steps{
+                sh "cp /home/jenkins/jenkins/workspace/ADAS_China/workdir/test/test_calibration.py /home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/validation/tests/uds/"
+            }
+        }
+
         stage('Test') {
             steps {
                 sh """
@@ -35,8 +41,7 @@ pipeline {
            	        cd ${test_dir_path}
                     rm -rf results
                     mkdir -p results
-                    python -m pytest -vs test_uds_did_f101.py \
-                        --log_dir_path results
+                    python -m pytest -vs test_calibration.py --log_dir_path results
                     deactivate
                 """
             }
