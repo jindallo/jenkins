@@ -36,7 +36,7 @@ pipeline {
                     rm -rf results
                     mkdir -p results
                     python -m pytest -vs test_uds_did_f101.py \
-                        -- log_dir_path results
+                        --log_dir_path results
                     deactivate
                 """
             }
