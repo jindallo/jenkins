@@ -1,4 +1,4 @@
-import asimov import s32v
+from asimov import s32v
 
 class Test():
     def test_read_calibration():
