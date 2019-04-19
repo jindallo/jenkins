@@ -31,6 +31,7 @@ pipeline {
                     rm -rf venv
                     virtualenv --no-download venv -p python3.6
                     . venv/bin/activate
+                    ./validation/init.sh
            	        cd ${test_dir_path}
                     rm -rf results
                     mkdir -p results
