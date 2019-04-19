@@ -28,6 +28,8 @@ pipeline {
             steps {
                 sh """
                     cd /home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov
+                    rm -rf venv
+                    virtualenv --no-download venv -p python3.6
                     . venv/bin/activate
            	        cd ${test_dir_path}
                     rm -rf results
