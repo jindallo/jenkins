@@ -1,3 +1,4 @@
+import filecmp
 from asimov import s32v
 
 class Test():
