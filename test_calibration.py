@@ -6,6 +6,7 @@ class Test():
         v = s32v.S32V()
         v.connect()
         v.get_file("/root/jin.test", "./")
+        v.disconnect()
         assert 1 == 1
 
     def test_read_calibration_2(self):
