@@ -88,7 +88,7 @@ class Test():
 
 
 
-    def test_flash(self, asimov_bundle, logger, uds_client_mgr):
+    def test_flash(self, logger, uds_client_mgr):
         print("[Jin] test_flash")
         udsc = uds_client_mgr
         # Get configuration file (assume default file)
@@ -107,7 +107,7 @@ class Test():
         # Get the tar file
         tar_file = self._get_tar_from_bundle(bundle_path)
         if tar_file is None:
-            ab = self._asimov_bundle
+            ab = asimov_bundle.AsimovBundle()
             ab.get_latest_master_bundle(bundle_path)
 
         tar_file = self._get_tar_from_bundle(bundle_path)
