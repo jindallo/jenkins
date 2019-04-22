@@ -4,33 +4,20 @@ import os
 import errno
 import shutil
 from configparser import ConfigParser
-
 from tools.adtools.modules.uds import uds
-
 from tools.adtools.modules.util.asimov_bundle import AsimovBundle
-
 from tools.adtools.modules.asimov.s32v import S32V
 from tools.adtools.modules.asimov.asimov_constants import (SecurityLevel)
-
-
 from tools.adtools.libs.uds_manager.uds_client_manager import UDSClientManager
 from uds_manager.uds_client_manager import UDSClientTransportType
-
-
-
-
-
 from tools.adtools.libs.asimov_managers.asimov_uds_client import AsimovUDSClientManager
 
 CFG_PATH = os.path.abspath(os.path.dirname(__file__)) + "/pytest.ini"
-
 
 class Test():
     def test_read_calibration(self):
         print("[Jin]")
         assert 1==1
-
-class TestFunctionFlash():
 
     @pytest.fixture(scope="class")
     def asimov_bundle(self):
@@ -101,7 +88,8 @@ class TestFunctionFlash():
 
 
 
-    def flash(self, logger, uds_client_mgr):
+    def test_flash(self, logger, uds_client_mgr):
+        print("[Jin] test_flash")
         udsc = uds_client_mgr
         # Get configuration file (assume default file)
         cfg = ConfigParser()
