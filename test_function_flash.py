@@ -88,7 +88,7 @@ class Test():
 
 
 
-    def test_flash(self, logger, uds_client_mgr):
+    def test_flash(self, asimov_bundle, logger, uds_client_mgr):
         print("[Jin] test_flash")
         udsc = uds_client_mgr
         # Get configuration file (assume default file)
