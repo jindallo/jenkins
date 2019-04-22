@@ -97,21 +97,12 @@ class Test():
 
         # Parse configuration file
         bundle_path = cfg.get("master", "local_path")
+        print("[Jin]" + bundle_path)
         # try:
         #     os.makedirs(bundle_path)
         # except OSError as e:
         #     if e.errno != errno.EEXIST:
         #         return False
-
-        # Get the tar file
-        tar_file = self._get_tar_from_bundle(bundle_path)
-
-        assert tar_file is not None, "Error tar file not found."
-
-        # Read/cache file data
-        with open(tar_file, 'rb') as f:
-            file_data = f.read()
-        file_size = len(file_data)
 
         # Get the tar file
         tar_file = self._get_tar_from_bundle(bundle_path)
