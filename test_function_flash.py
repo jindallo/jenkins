@@ -107,7 +107,7 @@ class Test():
         # Get the tar file
         tar_file = self._get_tar_from_bundle(bundle_path)
         if tar_file is None:
-            ab = asimov_bundle.AsimovBundle()
+            ab = AsimovBundle()
             ab.get_latest_master_bundle(bundle_path)
 
         tar_file = self._get_tar_from_bundle(bundle_path)
