@@ -26,7 +26,7 @@ pipeline {
 
         stage("Deploy") {
             steps{
-                sh "cp /home/jenkins/jenkins/workspace/ADAS_China/workdir/test/test_calibration.py /home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/validation/tests/uds/"
+                sh "cp /home/jenkins/jenkins/workspace/ADAS_China/workdir/test/test_function_flash.py /home/jenkins/jenkins/workspace/ADAS_China/workdir/asimov/validation/tests/uds/"
             }
         }
 
@@ -41,7 +41,7 @@ pipeline {
            	        cd ${test_dir_path}
                     rm -rf results
                     mkdir -p results
-                    python -m pytest -vs test_calibration.py --log_dir_path results
+                    python3 -m pytest -vs test_function_flash.py --log_dir_path results
                     deactivate
                 """
             }
