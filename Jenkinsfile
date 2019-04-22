@@ -20,7 +20,7 @@ pipeline {
         stage("Prepare") {
             steps{
                 sh "/home/jenkins/replay.sh"
-                sh "sleep 10"
+                sh "sleep 11"
             }
         }
 
