@@ -33,13 +33,11 @@ filetype plugin indent on    " required
 
 syntax on
 set number
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 set expandtab
+set tabstop=8
+set shiftwidth=4
+set softtabstop=4
 set autoindent
-set fileformat=unix
-set encoding=utf-8
 set hlsearch
 set nowrapscan
 set t_Co=256
@@ -47,6 +45,8 @@ set cursorline
 set splitbelow
 set splitright
 set foldlevelstart=99
+set fileformat=unix
+set encoding=utf-8
 let g:python_highlight_all = 1
 highlight CursorLine term=bold cterm=bold
 highlight LineNr ctermfg=darkgray
